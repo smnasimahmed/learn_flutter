@@ -34,3 +34,10 @@ class Recipe {
 }
 
 // TODO: Add Ingredient class here
+class Ingredient {
+  double quantity;
+  String measure;
+  String name;
+
+  Ingredient(this.quantity, this.measure, this.name);
+}
