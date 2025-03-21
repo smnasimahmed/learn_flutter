@@ -41,14 +41,30 @@ class _RecipeDetailState extends State<RecipeDetail> {
           ),
           // TODO: Add expended
           Expanded(
-              child: ListView.builder(
-                  itemCount: widget.recipe.ingredients.length,
-                  itemBuilder: (context, index) {
-                    final ingredient = widget.recipe.ingredients[index];
-                    return Text(
-                        '${ingredient.quantity.toInt()} ${ingredient.measure} ${ingredient.name}');
-                  }))
+            child: ListView.builder(
+              itemCount: widget.recipe.ingredients.length,
+              itemBuilder: (context, index) {
+                final ingredient = widget.recipe.ingredients[index];
+                return Text(
+                    '${_sliderVal * ingredient.quantity} ${ingredient.measure} ${ingredient.name}');
+              },
+            ),
+          ),
           // TODO: Add Slider() here
+          Slider(
+            min: 1,
+            max: 10,
+            divisions: 9,
+            label: '${_sliderVal * widget.recipe.servings}',
+            value: _sliderVal.toDouble(),
+            onChanged: (double newValue) {
+              setState(() {
+                _sliderVal = newValue.round();
+              });
+            },
+            activeColor: Colors.green,
+            inactiveColor: Colors.black,
+          ),
         ],
       )),
     );
