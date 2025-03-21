@@ -12,6 +12,7 @@ class RecipeDetail extends StatefulWidget {
 // TODO: Add _RecipeDetailState here
 class _RecipeDetailState extends State<RecipeDetail> {
   // TODO: Add _sliderVal here
+  int _sliderVal = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +40,14 @@ class _RecipeDetailState extends State<RecipeDetail> {
             style: const TextStyle(fontSize: 18),
           ),
           // TODO: Add expended
+          Expanded(
+              child: ListView.builder(
+                  itemCount: widget.recipe.ingredients.length,
+                  itemBuilder: (context, index) {
+                    final ingredient = widget.recipe.ingredients[index];
+                    return Text(
+                        '${ingredient.quantity.toInt()} ${ingredient.measure} ${ingredient.name}');
+                  }))
           // TODO: Add Slider() here
         ],
       )),
