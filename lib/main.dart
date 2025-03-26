@@ -60,7 +60,7 @@ class _YummyState extends State<Yummy> {
           // TODO: Add action buttons
           actions: [
             ThemeButton(changeThemeMode: changeThemeMode),
-            ColorButton(changeColor: changeColor, colorSelected: colorselected)
+            ColorButton(changeColor: changeColor, colorSelected: colorselected),
           ],
           elevation: 4.0,
           title: const Text(

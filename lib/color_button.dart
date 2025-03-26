@@ -35,7 +35,7 @@ class ColorButton extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(currentColor.label),
-                  )
+                  ),
                 ],
               ),
             );
