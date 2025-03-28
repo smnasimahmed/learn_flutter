@@ -20,7 +20,9 @@ class ColorButton extends StatelessWidget {
           ColorSelection.values.length,
           (index) {
             final currentColor = ColorSelection.values[index];
+            // zei index e click korbo oi index er shob data currentColor e zabe
             return PopupMenuItem(
+              // PopupMenuItem passes the clicked data to onSelected
               value: index,
               enabled: currentColor != colorSelected,
               child: Wrap(
