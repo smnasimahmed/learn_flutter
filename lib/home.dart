@@ -40,11 +40,13 @@ class _HomeState extends State<Home> {
         ),
       ),
       // TODO: Switch between pages
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Text(
           'Hello World!',
-          style: TextStyle(fontSize: 30.0),
+          style: Theme.of(context)
+              .textTheme
+              .displayLarge, //I don't know about this :(
         ),
       ),
       // TODO: Add bottom navigation bar
