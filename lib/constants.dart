@@ -10,7 +10,8 @@ enum ColorSelection {
   green('Green', Colors.green),
   yellow('Yellow', Colors.yellow),
   orange('Orange', Colors.orange),
-  deepOrange('Deep Orange', Colors.deepOrange);
+  deepOrange('Deep Orange', Colors.deepOrange),
+  pink('Pink', Colors.pink);
 
 // 2
   const ColorSelection(
