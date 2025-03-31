@@ -19,10 +19,54 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   // TODO: Track current tab
+  int tab = 0;
   // TODO: Define tab bar destinations
+  List<NavigationDestination> appBarDestinations = [
+    const NavigationDestination(
+      icon: Icon(Icons.credit_card),
+      label: 'Category',
+      selectedIcon: Icon(Icons.credit_card),
+    ),
+    const NavigationDestination(
+      icon: Icon(Icons.credit_card),
+      label: 'Post',
+      selectedIcon: Icon(Icons.credit_card),
+    ),
+    const NavigationDestination(
+      icon: Icon(Icons.credit_card),
+      label: 'Restaurent',
+      selectedIcon: Icon(Icons.credit_card),
+    )
+  ];
   @override
   Widget build(BuildContext context) {
     // TODO: Define pages
+    final pages = [
+      // TODO: Replace with Category Card
+      const Scaffold(
+        body: Center(
+            child: Text(
+          'This is Category Page',
+          style: TextStyle(fontSize: 20),
+        )),
+      ),
+      // TODO: Replace with Post Card
+      const Scaffold(
+        body: Center(
+            child: Text(
+          'This is Post Page',
+          style: TextStyle(fontSize: 20),
+        )),
+      ),
+      // TODO: Replace with Restaurant Landscape Card
+      const Scaffold(
+        body: Center(
+            child: Text(
+          'This is Restaurent Page',
+          style: TextStyle(fontSize: 20),
+        )),
+      ),
+    ];
     return Scaffold(
       appBar: AppBar(
         surfaceTintColor: widget.colorselected.color,
@@ -40,16 +84,20 @@ class _HomeState extends State<Home> {
         ),
       ),
       // TODO: Switch between pages
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Text(
-          'Hello World!',
-          style: Theme.of(context)
-              .textTheme
-              .displayLarge, //I don't know about this :(
-        ),
+      body: IndexedStack(
+        index: tab,
+        children: pages,
+        //Normally pages support cause page is a list that supports childern
       ),
       // TODO: Add bottom navigation bar
+      bottomNavigationBar: NavigationBar(
+          selectedIndex: tab,
+          onDestinationSelected: (index) {
+            setState(() {
+              tab = index;
+            });
+          },
+          destinations: appBarDestinations),
     );
   }
 }
