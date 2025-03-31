@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:yummy_app/components/category_card.dart';
+import 'package:yummy_app/models/food_category.dart';
 import 'theme_button.dart';
 import 'color_button.dart';
 import 'constants.dart';
@@ -20,6 +22,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   // TODO: Track current tab
   int tab = 0;
+
   // TODO: Define tab bar destinations
   List<NavigationDestination> appBarDestinations = [
     const NavigationDestination(
@@ -43,12 +46,11 @@ class _HomeState extends State<Home> {
     // TODO: Define pages
     final pages = [
       // TODO: Replace with Category Card
-      const Scaffold(
-        body: Center(
-            child: Text(
-          'This is Category Page',
-          style: TextStyle(fontSize: 20),
-        )),
+      Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 300),
+          child: CategoryCard(category: categories[0]),
+        ),
       ),
       // TODO: Replace with Post Card
       const Scaffold(
@@ -88,10 +90,12 @@ class _HomeState extends State<Home> {
         index: tab,
         children: pages,
         //Normally pages support cause page is a list that supports childern
+        // And controlled by tab setted from bottomNavigationBar
       ),
       // TODO: Add bottom navigation bar
       bottomNavigationBar: NavigationBar(
           selectedIndex: tab,
+          // This tab and that IndexedStack tab are controlled by same tab number
           onDestinationSelected: (index) {
             setState(() {
               tab = index;
