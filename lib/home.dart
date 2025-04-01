@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yummy_app/components/category_card.dart';
 import 'package:yummy_app/models/food_category.dart';
-import 'theme_button.dart';
-import 'color_button.dart';
+import 'components/theme_button.dart';
+import 'components/color_button.dart';
 import 'constants.dart';
 
 class Home extends StatefulWidget {

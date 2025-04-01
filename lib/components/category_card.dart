@@ -20,26 +20,43 @@ class CategoryCard extends StatelessWidget {
           Stack(
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.vertical(
-                  top: Radius.circular(8.0),
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(10.0),
                 ),
                 child: Image.asset(category.imageUrl),
               ),
               Positioned(
+                left: 16.0,
+                right: 16.0,
                 child: Text(
                   'Yummy',
                   style: textTheme.headlineLarge,
                 ),
               ),
               Positioned(
-                child: Text(
-                  'Smoothies',
-                  style: textTheme.headlineLarge,
+                bottom: 16.0,
+                right: 16.0,
+                child: RotatedBox(
+                  quarterTurns: 1,
+                  child: Text(
+                    'Smoothies',
+                    style: textTheme.headlineLarge,
+                  ),
                 ),
               ),
             ],
-          )
+          ),
           // TODO: Add ListTile widget
+          ListTile(
+            title: Text(
+              category.name,
+              style: textTheme.titleSmall,
+            ),
+            subtitle: Text(
+              '${category.numberOfRastaurent} places',
+              style: textTheme.bodySmall,
+            ),
+          ),
         ],
       ),
     );

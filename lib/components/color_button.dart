@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import '../constants.dart';
 
 class ColorButton extends StatelessWidget {
   final void Function(int) changeColor;
