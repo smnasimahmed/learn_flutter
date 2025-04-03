@@ -15,7 +15,7 @@ class RestaurantLandscapeCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.vertical(
+            borderRadius: const BorderRadius.vertical(
               top: Radius.circular(10.0),
             ),
             child: AspectRatio(
