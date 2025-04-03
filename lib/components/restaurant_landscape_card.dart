@@ -14,6 +14,7 @@ class RestaurantLandscapeCard extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          // TODO: Add Image with ClipRRect
           ClipRRect(
             borderRadius: const BorderRadius.vertical(
               top: Radius.circular(10.0),
@@ -26,6 +27,7 @@ class RestaurantLandscapeCard extends StatelessWidget {
               ),
             ),
           ),
+          // TODO: Add Listile
           ListTile(
             title: Text(
               restaurant.name,
