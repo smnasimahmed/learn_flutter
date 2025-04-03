@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yummy_app/components/category_card.dart';
+import 'package:yummy_app/components/post_card.dart';
 import 'package:yummy_app/models/food_category.dart';
+import 'package:yummy_app/models/post.dart';
 import 'components/theme_button.dart';
 import 'components/color_button.dart';
 import 'constants.dart';
@@ -53,12 +55,11 @@ class _HomeState extends State<Home> {
         ),
       ),
       // TODO: Replace with Post Card
-      const Scaffold(
-        body: Center(
-            child: Text(
-          'This is Post Page',
-          style: TextStyle(fontSize: 20),
-        )),
+      Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: PostCard(post: posts[0]),
+        ),
       ),
       // TODO: Replace with Restaurant Landscape Card
       const Scaffold(
